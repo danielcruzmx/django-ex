@@ -3,13 +3,12 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from main import views
 
-from welcome.views import index, health
+#from welcome.views import index, health
 
 urlpatterns = [
     # Examples:
     # url(r'^$', 'project.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^$', index),
     url(r'^api-rest/olimpo/informe/(?P<depto_id>[\w]+)/$',
     views.CuotasViewSet.as_view(), name='my_rest_view'),
     url(r'^api-rest/totalIngresosEgresos/(?P<condominio>[\w]+)/(?P<fec_ini>((19|20)\d\d)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]))/(?P<fec_fin>((19|20)\d\d)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]))/$',
