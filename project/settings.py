@@ -36,6 +36,11 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'explorer',
+    'rest_framework',
+    'main',
+    'c_olimpo',
+    'c_sadicarnot',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
-    'welcome',
 ]
 
 MIDDLEWARE = [
