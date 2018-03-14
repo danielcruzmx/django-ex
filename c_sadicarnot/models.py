@@ -1,6 +1,7 @@
 from django.db import models
 from main.models import Banco, Condominio, Proveedore, TipoDocumento, \
                         Situacion, TipoMovimiento, CuentaContable
+from django.db.models import Q                        
 
 # Create your models here.
 
