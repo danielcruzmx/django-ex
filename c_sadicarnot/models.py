@@ -93,7 +93,7 @@ class Movimiento(models.Model):
     descripcion = models.CharField(max_length=250, blank=True, null=True)
     condomino = models.ForeignKey(Condomino, related_name='sadi_movimiento_condomino_id')
     retiro = models.DecimalField(max_digits=9, decimal_places=2, blank=True, null=True, default=0)
-    deposito = models.DecimalField(max_digits=9, decimal_places=2, blank=True, null=True, default=0)
+    deposito = models.DecimalField(max_digits=9, decimal_places=2, blank=True, null=True, default=500)
     documento = models.ForeignKey(Documento, related_name='sadi_movimiento_documento_id', default=0)
 
     def __str__(self):
