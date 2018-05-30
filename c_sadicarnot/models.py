@@ -87,7 +87,7 @@ class Documento(models.Model):
         db_table = 'sadi_documento'
 
 class Movimiento(models.Model):
-    cuenta_banco = models.ForeignKey(CuentaBanco, related_name='sadi_movimiento_cuenta_id', default = 1)
+    cuenta_banco = models.ForeignKey(CuentaBanco, related_name='sadi_movimiento_cuenta_id', default = 2)
     fecha = models.DateField(blank=True, null=True)
     tipo_movimiento = models.ForeignKey(TipoMovimiento, blank=True, null=True, related_name='sadi_movimiento_tipo_movimiento_id')
     descripcion = models.CharField(max_length=250, blank=True, null=True)
