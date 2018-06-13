@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'main',
     'c_olimpo',
     'c_sadicarnot',
+    'c_sadiochouno',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
