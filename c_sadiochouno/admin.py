@@ -29,7 +29,7 @@ class MovtoAdminBO(admin.ModelAdmin):
 	readonly_fields = ('detalle',)
 	ordering = ('-fecha',)
 	save_on_top = True
-	inlines = [DetalleMovtoInlineB]
+	inlines = [DetalleMovtoInlineBO]
 
 	def concepto(self, request, obj=None, **kwargs):
 		return '%s %s' % (request.tipo_movimiento,request.descripcion)

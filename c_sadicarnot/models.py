@@ -1,7 +1,7 @@
 from django.db import models
 from main.models import Banco, Condominio, Proveedore, TipoDocumento, \
                         Situacion, TipoMovimiento, CuentaContable
-from django.db.models import Q                        
+from django.db.models import Q
 
 # Create your models here.
 
@@ -60,10 +60,10 @@ class Condomino(models.Model):
 
     def cuotas(self):
         return '<a href="/explorer/5/download?format=csv&params=depto:\'%s\'">Cuotas *.csv</a>' % (self.depto)
-        
+
 
     cargos.allow_tags = True
-    depositos.allow_tags = True 
+    depositos.allow_tags = True
     cuotas.allow_tags = True
 
     class Meta:
@@ -94,7 +94,7 @@ class Movimiento(models.Model):
     condomino = models.ForeignKey(Condomino, related_name='sadi_movimiento_condomino_id')
     retiro = models.DecimalField(max_digits=9, decimal_places=2, blank=True, null=True, default=0)
     deposito = models.DecimalField(max_digits=9, decimal_places=2, blank=True, null=True, default=500)
-    documento = models.ForeignKey(Documento, related_name='sadi_movimiento_documento_id', default=0)
+    documento = models.ForeignKey(Documento, related_name='sadi_movimiento_documento_id', default=1)
 
     def __str__(self):
         return u'%d %s %d %s' % (self.id, self.fecha.strftime('%d/%m/%Y'), self.deposito, self.descripcion[:15])
@@ -137,4 +137,4 @@ class Asiento(models.Model):
     class Meta:
         managed = True
         db_table = 'sadi_asiento'
-        ordering = ['fecha']    
+        ordering = ['fecha']

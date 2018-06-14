@@ -43,7 +43,7 @@ class Condomino(models.Model):
     fecha_escrituracion = models.DateField(blank=True, null=True)
     referencia = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     condominio = models.ForeignKey(Condominio, related_name='sadiochouno_condomino_condominio_id')
-    indiviso = referencia = models.DecimalField(max_digits=10, decimal_places=4, blank=True, null=True)
+    indiviso = models.DecimalField(max_digits=10, decimal_places=4, blank=True, null=True)
     estacionamiento = models.ManyToManyField(Estacionamiento, related_name='sadiochouno_condomino_estac_id')
 
     def __str__(self):
@@ -95,7 +95,7 @@ class Movimiento(models.Model):
     condomino = models.ForeignKey(Condomino, related_name='sadiochouno_mov_condomino_id')
     retiro = models.DecimalField(max_digits=9, decimal_places=2, blank=True, null=True, default=0)
     deposito = models.DecimalField(max_digits=9, decimal_places=2, blank=True, null=True, default=0)
-    documento = models.ForeignKey(Documento, related_name='sadiochouno_mov_documento_id', default=0)
+    documento = models.ForeignKey(Documento, related_name='sadiochouno_mov_documento_id', default=1)
 
     def __str__(self):
         return u'%d %s %d %s' % (self.id, self.fecha.strftime('%d/%m/%Y'), self.deposito, self.descripcion[:15])
