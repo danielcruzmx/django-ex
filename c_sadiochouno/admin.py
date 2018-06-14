@@ -9,7 +9,7 @@ from c_sadiochouno.models import Condomino, Estacionamiento, CuentaBanco, \
 
 class DetalleMovtoInlineBO(admin.TabularInline):
 	model = DetalleMovimiento
-	fields = ['descripcion', 'monto', 'cuenta_contable', 'proveedor']
+	fields = ['cuenta_contable', 'monto', 'proveedor']
 	#list_display = ('cuenta_contable',)
 	#list_filter = (('cuenta_contable', admin.RelatedOnlyFieldListFilter),)
 

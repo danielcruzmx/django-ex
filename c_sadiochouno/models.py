@@ -107,7 +107,8 @@ class Movimiento(models.Model):
 
 class DetalleMovimiento(models.Model):
     movimiento = models.ForeignKey(Movimiento, verbose_name = ('Movto'), on_delete = models.CASCADE, related_name='sadiochouno_mov_detalle')
-    descripcion = models.CharField(max_length=250, blank=True, null=True)
+    descripcion = models.CharField(max_length=250, blank=True, null=True, default = '.')
+    #descripcion = models.CharField(max_length=250, blank=True, null=True)
     monto = models.DecimalField(max_digits=9, decimal_places=2, blank=True, null=True, default=0)
     cuenta_contable =  models.ForeignKey(CuentaContable, verbose_name = ('Cuenta Contable Ingreso/Egreso'), on_delete = models.CASCADE, related_name='sadiochouno_cta_detalle', limit_choices_to = Q(clave_mayor='41') | Q(clave_mayor='51') | Q(num_cuenta='2318'))
     proveedor = models.ForeignKey(Proveedore, verbose_name = ('Proveedor'), on_delete = models.CASCADE, related_name='sadiochouno_prov_detalle')
